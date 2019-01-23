@@ -17,7 +17,7 @@ class ProductDetailScreen extends State<ProductDetail> {
   var _product = [];
 
   _getProductDetail() async {
-    String dataUrl = API.productDetail;
+    String dataUrl = API.products;
     http.Response response = await http.get('${dataUrl}/${widget.id}');
 
     await setState(() {

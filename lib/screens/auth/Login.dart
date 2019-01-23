@@ -36,16 +36,13 @@ class LoginScreenState extends State<Login> {
   }
 
   void _showDialog() {
-    // flutter defined function
     showDialog(
       context: context,
       builder: (BuildContext context) {
-        // return object of type Dialog
         return AlertDialog(
           title: new Text("Opps!"),
           content: new Text("Username or password is not correct"),
           actions: <Widget>[
-            // usually buttons at the bottom of the dialog
             new FlatButton(
               child: new Text("Close"),
               onPressed: () {
@@ -67,7 +64,6 @@ class LoginScreenState extends State<Login> {
         "password": _password,
       }
     ).then((res) {
-      print("body success: ${res.body}");
       var data = jsonDecode(res.body);
       if(data['success'] == true) {
         _hideLoading();
@@ -85,12 +81,10 @@ class LoginScreenState extends State<Login> {
       showDialog(
         context: context,
         builder: (BuildContext context) {
-          // return object of type Dialog
           return AlertDialog(
             title: new Text("Opps!"),
             content: new Text("Error connect to server"),
             actions: <Widget>[
-              // usually buttons at the bottom of the dialog
               new FlatButton(
                 child: new Text("Close"),
                 onPressed: () {
@@ -145,11 +139,6 @@ class LoginScreenState extends State<Login> {
                   decoration: new InputDecoration(
                     labelText: 'Username'
                   ),
-                  validator: (value) {
-                    if(value.isEmpty) {
-                      return 'Please enter username';
-                    }
-                  },
                 ),
               ),
 
